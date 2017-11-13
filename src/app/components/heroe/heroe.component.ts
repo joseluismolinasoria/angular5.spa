@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HeroesService, Heroe } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-heroe',
@@ -8,7 +10,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HeroeComponent implements OnInit {
 
-  constructor() { }
+  heroe:Heroe = null;
+
+  constructor ( private activatedRoute:ActivatedRoute,
+                private heroeService:HeroesService ) {
+    this.activatedRoute.params.subscribe( params => {
+      this.heroe = this.heroeService.getHeroe(params.id);
+    });
+  }
 
   ngOnInit() {
   }
