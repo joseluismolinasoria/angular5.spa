@@ -15,7 +15,11 @@ export class NavbarComponent implements OnInit {
 
   buscarHeroe (evento:any, texto:string) {
     event.preventDefault();
-    console.log ('buscarHeroe', texto);
+
+    if ( texto.length === 0 ) {
+      alert ('No hay dato para buscar');
+    }
+
     this._router.navigate(['/heroes', texto]);
   }
 

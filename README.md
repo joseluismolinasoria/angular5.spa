@@ -1,5 +1,7 @@
 # Nombre
 
+Primer ejemplo de aplicación SPA en Angular 5. Ejemplo del curso de Angular5.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
 ## Development server
